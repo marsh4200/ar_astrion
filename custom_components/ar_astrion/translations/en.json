@@ -1,0 +1,66 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add an Astrion remote",
+        "description": "The remote's address on your network. Its configuration server runs on port 8080 — the same address the Settings panel on the remote shows.",
+        "data": {
+          "host": "Host",
+          "port": "Port"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nothing answered on that address. Check the remote is awake and on the same network, and that the configuration server is enabled in its Settings panel.",
+      "no_webhook_endpoint": "The remote answered, but does not accept a webhook id. Update Astrion Custom Dashboard on the remote to a build that includes POST /webhook-id, then try again."
+    },
+    "abort": {
+      "already_configured": "That remote is already set up."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Update source",
+        "description": "GitHub repository the update entity compares the installed version against. Change it if you run a fork that publishes its own releases.",
+        "data": {
+          "release_repo": "Releases repository"
+        }
+      }
+    }
+  },
+  "services": {
+    "push_dashboard": {
+      "name": "Push dashboard",
+      "description": "Replaces dashboard.json on the remote and reloads its dashboard live.",
+      "fields": {
+        "path": {
+          "name": "File path",
+          "description": "A dashboard.json readable by Home Assistant. The directory must be in allowlist_external_dirs."
+        },
+        "config": {
+          "name": "Inline config",
+          "description": "The dashboard config itself, instead of a file."
+        }
+      }
+    },
+    "ring": {
+      "name": "Ring",
+      "description": "Plays a sound on the remote so it can be found.",
+      "fields": {
+        "sound": {
+          "name": "Sound",
+          "description": "Which of the device's own sounds to loop."
+        },
+        "volume": {
+          "name": "Volume",
+          "description": "Alarm-stream volume for the ring, 1-100."
+        },
+        "duration": {
+          "name": "Duration",
+          "description": "Seconds to ring before stopping, 1-60."
+        }
+      }
+    }
+  }
+}
