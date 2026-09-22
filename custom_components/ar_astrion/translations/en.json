@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "Add an Astrion remote",
-        "description": "The remote's address on your network. Its configuration server runs on port 8080 — the same address the Settings panel on the remote shows.",
+        "description": "The remote's address on your network. Its configuration server runs on port 8080 \u2014 the same address the Settings panel on the remote shows.",
         "data": {
           "host": "Host",
           "port": "Port"
@@ -11,8 +11,7 @@
       }
     },
     "error": {
-      "cannot_connect": "Nothing answered on that address. Check the remote is awake and on the same network, and that the configuration server is enabled in its Settings panel.",
-      "no_webhook_endpoint": "The remote answered, but does not accept a webhook id. Update Astrion Custom Dashboard on the remote to a build that includes POST /webhook-id, then try again."
+      "cannot_connect": "Nothing answered on that address. Check the remote is awake and on the same network as Home Assistant, that its configuration server is on (Settings panel on the remote), and that http://<that address>:8080/version opens in a browser on your phone."
     },
     "abort": {
       "already_configured": "That remote is already set up."
